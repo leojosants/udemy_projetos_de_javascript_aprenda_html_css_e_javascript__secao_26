@@ -1,5 +1,7 @@
 import { useState } from "react";
 import './App.css';
+import Todo_Component from "./components/Todo_component";
+import React from "react";
 
 // 
 function App() {
@@ -25,22 +27,13 @@ function App() {
   ]);
 
   return (
-    // 
     <div className="app">
       <h1>Lista de Tarefas</h1>
 
       <div className="todo_list">
         {
           todos.map((todo) => (
-            <div className="todo" key={todo.id}>
-              <div className="content">
-                <p>{todo.text}</p>
-                <p className="category">({todo.category})</p>
-              </div>
-
-              <button>Completar</button>
-              <button>X</button>
-            </div>
+            <Todo_Component todo={todo} />
           ))
         }
       </div>
