@@ -10,19 +10,19 @@ import FilterComponent from "./components/FilterComponent";
 function App() {
   const [todos, setTodos] = useState([
     {
-      id: Math.floor(Math.random() * 100),
+      id: Math.floor(Math.random() * 1000),
       text: 'Tarefa 1.',
       category: 'Trabalho',
       isCompleted: false,
     },
     {
-      id: Math.floor(Math.random() * 100),
+      id: Math.floor(Math.random() * 1000),
       text: 'Tarefa 2',
       category: 'Pessoal',
       isCompleted: false,
     },
     {
-      id: Math.floor(Math.random() * 100),
+      id: Math.floor(Math.random() * 1000),
       text: 'Tarefa 3.',
       category: 'Estudos',
       isCompleted: false,
@@ -30,6 +30,8 @@ function App() {
   ]);
 
   const [search, setSearch] = useState('');
+  const [filter, setFilter] = useState('All');
+  const [sort, setSort] = useState('Asc');
 
   const addTodo = (text, category) => {
     const new_todos = [...todos, {
@@ -68,11 +70,15 @@ function App() {
 
       <SearchComponent search={search} setSearch={setSearch} />
 
-      <FilterComponent />
+      <FilterComponent filter={filter} setFilter={setFilter} />
 
       <div className="todo_list">
         {
           todos
+            .filter((todo) => (
+              filter === 'All' ? true
+                : filter === 'Completed' ? todo.isCompleted : !todo.isCompleted
+            ))
             .filter((todo) => (todo.text.toLowerCase().includes(search.toLowerCase())))
             .map((todo) => (
               <TodoComponent todo={todo} key={todo.id} removeTodo={removeTodo} completeTodo={completeTodo} />

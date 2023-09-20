@@ -1,4 +1,5 @@
-const FilterComponent = () => {
+/* eslint-disable react/prop-types */
+const FilterComponent = ({ filter, setFilter }) => {
     return (
         <div className="filter">
             <h2>Filtrar:</h2>
@@ -7,9 +8,9 @@ const FilterComponent = () => {
                 <div>
                     <p>Status:</p>
 
-                    <select>
+                    <select value={filter} onChange={(event) => setFilter(event.target.value)}>
                         <option value="All">Todas</option>
-                        <option value="Complete">Completas</option>
+                        <option value="Completed">Completas</option>
                         <option value="Incomplete">Incompletas</option>
                     </select>
                 </div>
