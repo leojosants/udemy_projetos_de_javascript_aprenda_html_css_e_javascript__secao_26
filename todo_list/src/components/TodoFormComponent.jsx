@@ -1,12 +1,14 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
-const TodoFormComponent = () => {
+const TodoFormComponent = ({addTodo}) => {
     const [value, setValue] = useState('');
     const [category, setCategory] = useState('');
 
     const handleSubmit = (event) => { 
         event.preventDefault();
         if (!value || !category) return;
+        addTodo(value, category);
         setValue('');
         setCategory('');
     };
@@ -25,9 +27,9 @@ const TodoFormComponent = () => {
 
                 <select value={category} onChange={(event)=>setCategory(event.target.value)}>
                     <option value="">Selecione uma categoria</option>
-                    <option value="work">Trabalho</option>
-                    <option value="personal">Pessoal</option>
-                    <option value="studies">Estudos</option>
+                    <option value="Work">Trabalho</option>
+                    <option value="Personal">Pessoal</option>
+                    <option value="Studies">Estudos</option>
                 </select>
 
                 <button type="submit">Criar tarefa</button>
