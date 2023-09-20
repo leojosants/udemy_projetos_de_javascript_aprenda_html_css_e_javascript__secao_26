@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const Todo_Component = ({todo}) => {
+const TodoComponent = ({todo}) => {
     return (
         <div className="todo">
             <div className="content">
@@ -8,11 +8,11 @@ const Todo_Component = ({todo}) => {
             </div>
 
             <div>
-                 <button>Completar</button>
-                <button>X</button>
+                 <button className="complete">Completar</button>
+                <button className="remove">X</button>
            </div>
       </div>
     );
 };
 
-export default Todo_Component;
+export default TodoComponent;
