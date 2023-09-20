@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const TodoComponent = ({todo}) => {
+const TodoComponent = ({todo, removeTodo}) => {
     return (
         <div className="todo">
             <div className="content">
@@ -9,7 +9,7 @@ const TodoComponent = ({todo}) => {
 
             <div>
                  <button className="complete">Completar</button>
-                <button className="remove">X</button>
+                <button className="remove" onClick={() => removeTodo(todo.id)}>X</button>
            </div>
       </div>
     );
