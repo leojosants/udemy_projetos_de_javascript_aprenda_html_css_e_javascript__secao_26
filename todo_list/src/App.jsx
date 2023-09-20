@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './App.css';
 
 // 
 function App() {
@@ -11,31 +12,13 @@ function App() {
     },
     {
       id: 2,
-      text: 'Tarefa 2.',
-      category: 'Estudos',
+      text: 'Tarefa 2',
+      category: 'Saúde',
       isCompleted: false,
     },
     {
       id: 3,
-      text: 'Tarefa 3',
-      category: 'Saúde',
-      isCompleted: false,
-    },
-    {
-      id: 4,
-      text: 'Tarefa 4',
-      category: 'Saúde',
-      isCompleted: false,
-    },
-    {
-      id: 5,
-      text: 'Tarefa 5.',
-      category: 'Pessoal',
-      isCompleted: false,
-    },
-    {
-      id: 6,
-      text: 'Tarefa 6',
+      text: 'Tarefa 3.',
       category: 'Pessoal',
       isCompleted: false,
     },
