@@ -4,6 +4,7 @@ import React from "react";
 import TodoFormComponent from "./components/TodoFormComponent";
 import SearchComponent from "./components/SearchComponent";
 import TodoComponent from "./components/TodoComponent";
+import FilterComponent from "./components/FilterComponent";
 
 // 
 function App() {
@@ -66,6 +67,8 @@ function App() {
       <h1>Lista de Tarefas</h1>
 
       <SearchComponent search={search} setSearch={setSearch} />
+
+      <FilterComponent />
 
       <div className="todo_list">
         {

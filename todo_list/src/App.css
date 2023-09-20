@@ -97,3 +97,19 @@ input, select {
 .remove {
   background-color: var(--color_7);
 }
+
+.filter, .search {
+  border-bottom: 1px solid var(--color_8);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.filter_options {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.filter_options div {
+  flex: 1 1 0;
+}
